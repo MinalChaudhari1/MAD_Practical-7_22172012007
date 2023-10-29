@@ -10,16 +10,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val mediaController = MediaController(this)
-        val uri: Uri = Uri.parse("android.resource://" + packageName +"/" +R.raw.thestoryoflight)
-        val myvideoview =findViewById<VideoView>(R.id.videoView)
-        mediaController.setAnchorView(myvideoview)
-        myvideoview.setVideoURI(uri)
-        myvideoview.requestFocus()
-        myvideoview.start()
+        val uri: Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.thestoryoflight)
+        val myVideoView = findViewById<VideoView>(R.id.videoView)
+        mediaController.setAnchorView(myVideoView)
 
-
-
-
+        myVideoView.setMediaController(mediaController)
+        myVideoView.setVideoURI(uri)
+        myVideoView.requestFocus()
+        myVideoView.start()
     }
 }

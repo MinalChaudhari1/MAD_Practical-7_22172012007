@@ -2,6 +2,7 @@ package com.example.mad_practical_7_22172012007
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.webkit.WebSettings
 import android.webkit.WebView
 
 class YoutubeActivity : AppCompatActivity() {
@@ -11,5 +12,13 @@ class YoutubeActivity : AppCompatActivity() {
         val youtubeId = "fjn9B64Znrk"
         val webView = findViewById<WebView>(R.id.webView)
 
+    }
+    fun intYoutubePlayer(){ val youtubeId = "fJn9B64Znrk"
+        val youtubeWebView = findViewById<WebView>(R.id.WebView)
+        val webSettings: WebSettings = youtubeWebView.settings
+        webSettings.javaScriptEnabled = true
+        webSettings.loadWithOverviewMode = true
+        webSettings.useWideViewPort = true
+        youtubeWebView.loadUrl("https://www.youtube.com/embed/$youtubeId")
     }
 }
